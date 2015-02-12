@@ -37,6 +37,8 @@
 <p>Functional Programming is when functions, not objects or procedures, are used as the fundamental building blocks of a program. Functions in this sense, not to be confused with C language functions which are just procedures, are analogous to mathematical equations: they declare a relationship between two or more entities.
 Functional Programming, however, is not about mathematics but about abstraction and reducing complexity: as such, it provides a powerful paradigm in which to tackle complex, real-world programming tasks.</p>
 
+<p>Functional programming typically avoids using mutable state.</p>
+
 <p>Functional Programming Languages, which support this style of programming, provide at least some of the following features:</p>
 
 <ul>
@@ -60,6 +62,11 @@ Functional Programming, however, is not about mathematics but about abstraction 
 <li>program correctness</li>
 <li>expressive programs</li>
 </ul>
+
+<h3>
+<a id="what-are-firstclass-functions" class="anchor" href="#what-are-firstclass-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>What are FirstClass functions?</h3>
+
+<p>FirstClass functions means that they are treated like any other values and can be passed as arguments to other functions or be returned as a result of a function. Being first-class also means that it is possible to define and manipulate functions from within other functions. Special attention needs to be given to functions that reference local variables from their scope. If such a function escapes their block after being returned from it, the local variables must be retained in memory, as they might be needed later when the function is called. Often it is difficult to determine statically when those resources can be released, so it is necessary to use automatic memory management.</p>
       </section>
     </div>
 
