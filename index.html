@@ -82,6 +82,15 @@ Higher-order functions are very useful for refactoring code and reduce the amoun
 <p>Higher-order functions are often used to implement domain-specific languages.</p>
 
 <p>Higher-order functions can be usually simulated in object-oriented languages by functions that take function-objects, also called functors. Variables from the scope of the call can be bound inside the function-object which acts as if it were a closure. This way of simulating HOFs is, however, very verbose and requires declaring a new class each time we want to use a HOF.</p>
+
+<h2>
+<a id="lexicalclosures" class="anchor" href="#lexicalclosures" aria-hidden="true"><span class="octicon octicon-link"></span></a>LexicalClosures</h2>
+
+<p>A LexicalClosure, often referred to just as a closure, are typically (but not always) formed by defining a function inside another function.</p>
+
+<p>A lexical closure is called just like an ordinary function. When this happens, the code of the closure is executed, and the references to the 'captured' LexicalVariable's just work. For this, the captured lexicals must be saved somehow, in an object that persists as long as the closure exists. This means the lexical variables can't be stored in an ordinary stack frame that expires when the execution of the outer LexicalScope is finished.</p>
+
+<p>The closure has internal variables too, such as the parameters of its anonymous function, or local variables defined within the body of that function. These are the closure's bound variables, and are not included in the closure object, because their bindings are established whenever the closure is called. The captured variables from the surrounding environments are called free variables (that is, free with respect to the function because they are not bound within it but have to be "reached" for in the lexical environment). It's useful to know this free variable terminology because it's somewhat counter-intuitive, yet used quite a bit in the literature.</p>
       </section>
     </div>
 
