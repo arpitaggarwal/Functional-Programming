@@ -66,10 +66,14 @@ Functional Programming, however, is not about mathematics but about abstraction 
 <h3>
 <a id="firstclass-functions" class="anchor" href="#firstclass-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>FirstClass functions?</h3>
 
+<hr>
+
 <p>FirstClass functions means that they are treated like any other values and can be passed as arguments to other functions or be returned as a result of a function. Being first-class also means that it is possible to define and manipulate functions from within other functions. Special attention needs to be given to functions that reference local variables from their scope. If such a function escapes their block after being returned from it, the local variables must be retained in memory, as they might be needed later when the function is called. Often it is difficult to determine statically when those resources can be released, so it is necessary to use automatic memory management.</p>
 
 <h3>
 <a id="higher-order-functions" class="anchor" href="#higher-order-functions" aria-hidden="true"><span class="octicon octicon-link"></span></a>Higher-order functions?</h3>
+
+<hr>
 
 <p>Higher-order functions (HOFs) are functions that take other functions as their arguments. A basic example of a HOF is map which takes a function and a list as its arguments, applies the function to all elements of the list, and returns the list of its results. For instance, we can write a function that subtracts 2 from all elements of a list without using loops or recursion:
 subtractTwoFromList l = map (\x -&gt; x - 2) l
