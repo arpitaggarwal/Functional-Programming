@@ -91,6 +91,15 @@ Higher-order functions are very useful for refactoring code and reduce the amoun
 <p>A lexical closure is called just like an ordinary function. When this happens, the code of the closure is executed, and the references to the 'captured' LexicalVariable's just work. For this, the captured lexicals must be saved somehow, in an object that persists as long as the closure exists. This means the lexical variables can't be stored in an ordinary stack frame that expires when the execution of the outer LexicalScope is finished.</p>
 
 <p>The closure has internal variables too, such as the parameters of its anonymous function, or local variables defined within the body of that function. These are the closure's bound variables, and are not included in the closure object, because their bindings are established whenever the closure is called. The captured variables from the surrounding environments are called free variables (that is, free with respect to the function because they are not bound within it but have to be "reached" for in the lexical environment). It's useful to know this free variable terminology because it's somewhat counter-intuitive, yet used quite a bit in the literature.</p>
+
+<div class="highlight highlight-javascript"><pre><span class="pl-s">var</span> add <span class="pl-k">=</span> (<span class="pl-st">function</span> () {
+    <span class="pl-s">var</span> counter <span class="pl-k">=</span> <span class="pl-c1">0</span>;
+    <span class="pl-k">return</span> <span class="pl-st">function</span> () {<span class="pl-k">return</span> counter <span class="pl-k">+=</span> <span class="pl-c1">1</span>;}
+})();
+
+<span class="pl-st">function</span> <span class="pl-en">myFunction</span>(){
+    <span class="pl-s3">document</span>.<span class="pl-s3">getElementById</span>(<span class="pl-s1"><span class="pl-pds">"</span>demo<span class="pl-pds">"</span></span>).innerHTML <span class="pl-k">=</span> <span class="pl-s3">add</span>();
+}</pre></div>
       </section>
     </div>
 
